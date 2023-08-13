@@ -6,6 +6,7 @@ const config = {
     externals: {
       vue: 'Vue',
     },
+    devtool: 'source-map',
   },
 };
 

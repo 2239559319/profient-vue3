@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'profient vue3',
+  title: 'vue3源码解析',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/pv.svg',
 
@@ -45,7 +45,7 @@ const config = {
       }),
     ],
   ],
-
+  plugins: [require.resolve('docusaurus-plugin-image-zoom')],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -143,6 +143,17 @@ const config = {
         sidebar: {
           hideable: true,
           autoCollapseCategories: true,
+        },
+      },
+      zoom: {
+        selector: '.markdown :not(em) > img',
+        config: {
+          // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
+          background: {
+            light: 'rgb(255, 255, 255)',
+            dark: 'rgb(50, 50, 50)',
+          },
+          margin: 0,
         },
       },
     }),
