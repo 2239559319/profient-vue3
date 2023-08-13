@@ -1,5 +1,5 @@
 ---
-title: 1.2 调试技巧
+title: 1.2 调试
 sidebar_position: 1.2
 ---
 
@@ -42,6 +42,8 @@ pnpm build -s
 使用`webpack` external掉`vue`然后再通过全局引入`Vue`变量，这里全局引入的`Vue`是我们之前打包好的带有`sourcemap`的。这里引入的是`production`的打包，所以调试的时候不能使用`serve`命令，需要先把`production`模式下的产物输出在通过`serve dist`进行调试，这样可以省略到很多在`production`模式下不需要的代码比如`hmr`。当然如果想在`development`模式下调试的话可以引入`develeopment`模式下的`Vue`。
 
 后续引入的`vue`都是`production`模式下的。
+
+全局`vue`文件位于 [https://cdn.jsdelivr.net/npm/xiaochuan-vue3-source@0.0.5/dist/3.3.4/vue.global.prod.js](https://cdn.jsdelivr.net/npm/xiaochuan-vue3-source@0.0.5/dist/3.3.4/vue.global.prod.js)
 
 使用`@vue/cli`创建的项目可以直接修改`webpack`的配置
 
@@ -95,3 +97,69 @@ pnpm start
 ![图2](./imgs/debug2.png)
 
 webpack external方式的源码位于[examples/demo-webpack](https://github.com/2239559319/profient-vue3/tree/master/examples/demo-webpack)
+
+### vite externals
+
+`vite`使用`esm`，打包出的文件也有`esm`的版本。由于在`production`模式下`vite`使用的是`rollup`，修改`rollup`的`externals`配置在通过[importmap](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/script/type/importmap)引入打包好后的`esm vue`。
+
+`esm`模块的`vue`文件位于[https://cdn.jsdelivr.net/npm/xiaochuan-vue3-source@0.0.5/dist/3.3.4/vue.esm-browser.prod.js](https://cdn.jsdelivr.net/npm/xiaochuan-vue3-source@0.0.5/dist/3.3.4/vue.esm-browser.prod.js)
+
+```diff title="vite.config.js"
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [vue()],
++  build: {
++    sourcemap: true,
++    rollupOptions: {
++      external: ['vue'],
++    },
++  },
+});
+```
+
+```diff title="index.html"
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Vue</title>
++ <script type="importmap">
++      {
++        "imports": {
++          "vue": "https://cdn.jsdelivr.net/npm/xiaochuan-vue3-source@0.0.5/dist/3.3.4/vue.esm-browser.prod.js"
++        }
++      }
++    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
+```
+
+运行下面命令
+
+```shell
+pnpm build
+pnpm start
+```
+
+断点的步骤和`webpack`方式`externals`一样
+
+![图3](./imgs/debug3.png)
+![图4](./imgs/debug4.png)
+
+可以看到表现和`webpack`方式引入的`vue`一样
+
+`vite`引入方式的demo代码位于[examples/demo-vite](https://github.com/2239559319/profient-vue3/tree/master/examples/demo-vite)
+
+## 总结
+
+通过打包出带有`sourcemap`的vue产物再通过`externals`的方式引入就可以在源码里面进行断点了。这里两种方式引入表现都是一样的。
+
+> 后续的demo都以`webpack`方式引入

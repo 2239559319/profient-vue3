@@ -117,6 +117,10 @@ const config = {
                 label: 'Blog',
                 to: '/blog',
               },
+              {
+                label: 'Examples',
+                href: 'https://github.com/2239559319/profient-vue3/tree/master/examples',
+              },
             ],
           },
           {

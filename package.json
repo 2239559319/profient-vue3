@@ -2,8 +2,13 @@
   "name": "doc-theme-test",
   "version": "0.0.0",
   "private": true,
+  "lint-staged": {
+    "*": "pnpm format"
+  },
   "scripts": {
+    "postinstall": "husky install",
     "format": "prettier . --write",
+    "precommit": "lint-staged",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
@@ -28,6 +33,8 @@
     "@docusaurus/module-type-aliases": "2.4.1",
     "@docusaurus/types": "^2.4.1",
     "@tsconfig/docusaurus": "^1.0.5",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
     "prettier": "^3.0.1",
     "serve": "^14.2.0",
     "typescript": "^4.7.4"
