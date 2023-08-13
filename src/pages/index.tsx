@@ -8,7 +8,6 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import styles from './index.module.css';
 
 function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
   return (
     <div className={clsx(styles.header)}>
       <div className={clsx(styles['header-left'])}>
@@ -25,12 +24,9 @@ function HomepageHeader() {
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
-    >
+    <Layout title={siteConfig.title}>
       <HomepageHeader />
-      <div className={styles.main}>
+      <div style={{ padding: '40px' }}>
         <p>
           精通vue3源码旨在让没有读过源码的朋友深入了解vue3的运行，同时用配图的方式来梳理整个流程。
         </p>
