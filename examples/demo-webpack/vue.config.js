@@ -4,9 +4,9 @@
 const config = {
   configureWebpack: {
     externals: {
-      vue: 'Vue'
-    }
-  }
+      vue: 'Vue',
+    },
+  },
 };
 
 module.exports = config;

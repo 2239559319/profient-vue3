@@ -52,13 +52,14 @@ pnpm build -s
 const config = {
   configureWebpack: {
     externals: {
-      vue: 'Vue'
-    }
-  }
+      vue: 'Vue',
+    },
+  },
 };
 
 module.exports = config;
 ```
+
 ```diff title="public/index.html"
 <!DOCTYPE html>
 <html lang="">
@@ -79,12 +80,14 @@ module.exports = config;
   </body>
 </html>
 ```
+
 运行下面命令就能断点到源码里面了
 
 ```shell
 pnpm build
 pnpm start
 ```
+
 在浏览器里面我们把断点打到`main.js`的`createApp`那行，断点生效后点击`step into`(图1左下角)跳进函数声明，可以看到图2以及正确跳进了`vue3`的源码的`createApp`函数声明里面
 
 ![图1](./imgs/debug1.png)

@@ -8,34 +8,39 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import styles from './index.module.css';
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
+    <div className={clsx(styles.header)}>
+      <div className={clsx(styles['header-left'])}>
+        <div className={styles.title}>profient vue3</div>
+        <div className={styles['title-cn']}>精通vue3源码</div>
       </div>
-    </header>
+      <div className={styles['header-right']}>
+        <img src="/img/pv-cover.png" width={400} height={400} />
+      </div>
+    </div>
   );
 }
 
 export default function Home(): JSX.Element {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Description will go into a meta tag in <head />"
+    >
       <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
+      <div className={styles.main}>
+        <p>
+          精通vue3源码旨在让没有读过源码的朋友深入了解vue3的运行，同时用配图的方式来梳理整个流程。
+        </p>
+        <p>
+          vue3的源码构成相比于react十分清晰明了，使用chrome
+          devtools的断点以及performance record十分利于调试，方便新手入门
+        </p>
+
+        <a href="/docs/chapters/chapter1/">开始</a>
+      </div>
     </Layout>
   );
 }

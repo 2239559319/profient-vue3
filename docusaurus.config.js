@@ -31,11 +31,6 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-
         },
         blog: {
           showReadingTime: true,
@@ -57,9 +52,13 @@ const config = {
       // Replace with your project's social card
       image: 'img/pv.png',
       metadata: [
-        {name: 'keywords', content: 'vue3, sourcecode, from scratch, vue3源码, vue3源码解读, 精通vue3源码'},
-        {name: 'author', content: 'xiaochuan'},
-        {name: 'description', content: '从0开始精通vue3源码'}
+        {
+          name: 'keywords',
+          content:
+            'vue3, sourcecode, from scratch, vue3源码, vue3源码解读, 精通vue3源码',
+        },
+        { name: 'author', content: 'xiaochuan' },
+        { name: 'description', content: '从0开始精通vue3源码' },
       ],
       navbar: {
         title: 'profient vue3',
@@ -74,7 +73,7 @@ const config = {
             position: 'left',
             label: '文档',
           },
-          {to: '/blog', label: '博客', position: 'left'},
+          { to: '/blog', label: '博客', position: 'left' },
           {
             href: 'https://github.com/2239559319/profient-vue3',
             label: 'GitHub',
@@ -83,31 +82,31 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
+        style: 'light',
         links: [
           {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'doc',
                 to: '/docs',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'source',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'user',
+                href: 'https://github.com/2239559319/',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'github',
+                href: 'https://github.com/2239559319/profient-vue3',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'docs source',
+                href: 'https://github.com/2239559319/profient-vue3/tree/master/docs',
               },
             ],
           },
@@ -118,14 +117,19 @@ const config = {
                 label: 'Blog',
                 to: '/blog',
               },
+            ],
+          },
+          {
+            title: 'Author',
+            items: [
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'xiaochuan',
+                href: 'https://github.com/2239559319',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} profient-vue3. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
@@ -134,9 +138,9 @@ const config = {
       docs: {
         sidebar: {
           hideable: true,
-          autoCollapseCategories: true
-        }
-      }
+          autoCollapseCategories: true,
+        },
+      },
     }),
 };
 
