@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'My Site',
   tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/pv.svg',
 
   // Set the production url of your site here
   url: 'https://profient-vue3.pages.dev/',
@@ -55,12 +55,17 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/pv.png',
+      metadata: [
+        {name: 'keywords', content: 'vue3, sourcecode, from scratch, vue3源码, vue3源码解读, 精通vue3源码'},
+        {name: 'author', content: 'xiaochuan'},
+        {name: 'description', content: '从0开始精通vue3源码'}
+      ],
       navbar: {
-        title: 'My Site',
+        title: 'profient vue3',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'profient vue3',
+          src: 'img/pv.png',
         },
         items: [
           {
@@ -70,6 +75,11 @@ const config = {
             label: '文档',
           },
           {to: '/blog', label: '博客', position: 'left'},
+          {
+            href: 'https://github.com/2239559319/profient-vue3',
+            label: 'GitHub',
+            position: 'right',
+          },
         ],
       },
       footer: {
@@ -124,7 +134,7 @@ const config = {
       docs: {
         sidebar: {
           hideable: true,
-          autoCollapseCategories: false
+          autoCollapseCategories: true
         }
       }
     }),
