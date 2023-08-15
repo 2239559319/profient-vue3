@@ -5,15 +5,18 @@
     <div @click="add">add</div>
   </div>
   <HelloWorld msg="Welcome to Your Vue.js App" />
+  <Composite />
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue';
+import Composite from './components/Composite.vue';
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
+    Composite,
   },
   data() {
     return {

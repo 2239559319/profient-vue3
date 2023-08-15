@@ -23,6 +23,16 @@ const config = {
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+  headTags: [
+    {
+      tagName: 'script',
+      attributes: {
+        src: 'https://static.cloudflareinsights.com/beacon.min.js',
+        defer: 'true',
+        'data-cf-beacon': '{"token": "9b6235ccfde247a49aef83d2be243598"}',
+      },
+    },
+  ],
 
   presets: [
     [
