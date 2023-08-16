@@ -1,0 +1,24 @@
+---
+title: 写在前面
+description: back
+slug: 写在前面
+authors:
+  - name: xiaochuan
+    title: author
+    url: https://github.com/2239559319
+    image_url: https://avatars.githubusercontent.com/u/34960995?v=4
+image: https://i.imgur.com/mErPwqL.png
+hide_table_of_contents: false
+---
+
+# 写在前面
+
+其实我很早之前就想写一篇关于`vue3`的源码分析，鉴于之前上班很忙，加上上班使用的技术栈是`react`，`vue3`的源码只看过很少的一部分，主要的经历还是放在了`react`和相关的技术上。
+
+我于2023年7月末从字节离职，现在闲居在家，终于有时间写自己想了很久的文章了。
+
+选择`vue3`的原因有很多。第一个就是`vue3`的源码很简洁明了。相对于`react`的源码来讲，`vue3`的源码很少，而且思路十分清晰流畅。一个简单的例子就是`batchUpdate`，`vue3`的实现是直接都丢到一个异步队列里面进行渲染，在`react18`以前，`react`的`batchUpdate`是由`react`自己在事件回调里面进行实现的。另外，`vue3`并没有像`react18`那种`concurrent`那样抽象的东西。
+
+我于2020年的时候看了`深入浅出vue.js`这本书，当时我还在学校念书，对于源码的理解很差，书里面很多东西都没看懂。这本书讲的是`vue2`的源码分析，现在看起来写的确实很不错。当时`vue3`还是`beta`版本。写这篇文章的时候是2023年的8月，时间过了三年，我也看过不少的源码包括`react`等东西，调试技巧也比以前好了很多，有了自己的理解。
+
+无论是`vue`还是`react`渲染的算法都是使用`深度优先遍历`，在遍历到的时候做一些事在回溯的时候做一些事。本文档也会按照此思路去构建，自顶向下的构建。从`createApp`一直到逻辑最低端的`ref`等api。
