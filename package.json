@@ -5,6 +5,7 @@
   "lint-staged": {
     "*": "pnpm format"
   },
+  "packageManager": "pnpm@8.6.3",
   "scripts": {
     "postinstall": "husky install",
     "format": "prettier . --write",
