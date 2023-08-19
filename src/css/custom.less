@@ -1,0 +1,241 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #3283ff;
+  --ifm-color-primary-dark: #3086ff;
+  --ifm-color-primary-darker: #1f83ee;
+  --ifm-color-primary-darkest: #0983ee;
+  --ifm-color-primary-light: #5e97ee;
+  --ifm-color-primary-lighter: #83b4ff;
+  --ifm-color-primary-lightest: #9ec4fc;
+  --ifm-code-font-size: 95%;
+  --ifm-menu-color-background-hover: #9ea9d9;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  --grey-1: #242a31;
+  --grey-2: #4d5a66;
+  --grey-3: #e2e8ee;
+  --grey-4: #f5f7f9;
+  --primary-1: #5d6ac0;
+  --primary-2: #7987cb;
+  --primary-3: #9ea9d9;
+  --primary-4: #c5cae8;
+  --primary-5: #e8eaf7;
+  --semantic-info: #00a3da;
+  --semantic-info-light: #ebfcff;
+  --semantic-important: #f2bb08;
+  --semantic-important-light: #fefaeb;
+  --semantic-warning: #d4303b;
+  --semantic-warning-light: #fbeeef;
+
+  --color-white: #fff;
+
+  --ifm-blockquote-border-left-width: 4px;
+  --ifm-blockquote-border-color: var(--grey-1);
+  --ifm-heading-color: var(--grey-1);
+  --ifm-font-color-base: var(--grey-1);
+  --ifm-navbar-link-hover-color: var(--primary-1);
+  --ifm-font-weight-semibold: 600;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #3283ff;
+  --ifm-color-primary-dark: #3086ff;
+  --ifm-color-primary-darker: #1f83ee;
+  --ifm-color-primary-darkest: #0983ee;
+  --ifm-color-primary-light: #5e97ee;
+  --ifm-color-primary-lighter: #83b4ff;
+  --ifm-color-primary-lightest: #9ec4fc;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  --grey-1: #1a1e23;
+  --grey-2: #2c3237;
+  --grey-3: #546371;
+  --grey-4: #dce3ea;
+  --primary-1: #5d6ac0;
+  --primary-2: #7987cb;
+  --primary-3: #9ea9d9;
+  --primary-4: #c5cae8;
+  --primary-5: #e8eaf7;
+  --semantic-info: #00a3da;
+  --semantic-info-light: #173139;
+  --semantic-important: #f2bb08;
+  --semantic-important-light: #fefaeb;
+  --semantic-warning: #d4303b;
+  --semantic-warning-light: #fbeeef;
+
+  --color-white: #f9fcff;
+}
+
+.DocSearch-Button-Keys {
+  display: none !important;
+}
+
+.menu__link {
+  color: var(--grey-1);
+  font-weight: 400;
+}
+
+/* .menu__link--active:not(.menu__link--sublist)  {
+  color: var(--color-white);
+  background: var(--primary-1);
+} */
+
+.menu__link--active:not(.menu__link--sublist) {
+  background-color: var(--primary-1);
+  color: var(--color-white);
+}
+
+.menu__list-item-collapsible .menu__link:hover,
+.menu__list-item-collapsible .menu__link--active {
+  background: initial;
+}
+
+.menu__list-item-collapsible {
+  .menu__link {
+    color: var(--grey-1);
+    font-weight: 400;
+  }
+  &.menu__list-item-collapsible--active {
+    background-color: var(--primary-1);
+    color: var(--color-white) !important;
+    .menu__link--active {
+      background-color: var(--primary-1);
+      color: var(--color-white) !important;
+    }
+  }
+  &:hover {
+    background-color: var(--primary-2) !important;
+  }
+}
+
+.menu__link:hover {
+  background-color: var(--primary-2) !important;
+  color: var(--color-white);
+}
+
+.pagination-nav__link {
+  border-radius: 4px;
+  border: 1px solid var(--grey-3);
+  background: var(--grey-light-white, #fff);
+  color: var(--grey-1);
+
+  &:hover {
+    border-color: var(--grey-3);
+    color: var(--grey-2);
+    background: var(--grey-4);
+    .pagination-nav__sublabel {
+      color: var(--grey-2);
+    }
+  }
+
+  .pagination-nav__sublabel {
+    color: var(--grey-1);
+  }
+
+  .pagination-nav__label {
+    &::after,
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.pagination-nav__link {
+  padding-bottom: 20px;
+  .pagination-nav-c {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .pagination-nav__sublabel {
+    margin-bottom: 8px;
+  }
+}
+
+.pagination-nav {
+  display: flex;
+  .pagination-nav__link {
+    flex: 1;
+  }
+}
+
+.padding-top--md {
+  padding-top: 0 !important;
+}
+
+.navbar--fixed-top {
+  height: 98px;
+
+  box-shadow: none;
+  border-bottom: 1px solid var(--grey-3);
+
+  & .navbar__item {
+    margin-right: 16px;
+  }
+}
+.table-of-contents__link--active {
+  color: var(--primary-1);
+}
+.table-of-contents__link {
+  &:hover {
+    color: var(--primary-1);
+  }
+}
+
+.table-of-contents__link--active {
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--primary-1);
+  }
+}
+
+.table-of-contents {
+  padding: 0;
+  & li {
+    margin: 0;
+    a {
+      padding: 8px;
+      padding-left: 18px;
+      position: relative;
+    }
+  }
+}
+
+@media (max-width: 997px) {
+  .pagination-nav {
+    display: block;
+  }
+  .pagination-nav__link--prev {
+    margin-bottom: 16px;
+  }
+}
+
+code {
+  margin: 0 2px;
+  padding: 4px 6px;
+  border: none;
+  background-color: var(--primary-4);
+  word-break: break-all;
+  white-space: pre;
+}
+
+blockquote {
+  border-left: var(--ifm-blockquote-border-left-width) solid
+    var(--ifm-blockquote-border-color);
+}

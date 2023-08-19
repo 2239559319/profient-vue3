@@ -1,0 +1,16 @@
+.menuExternalLink {
+  align-items: center;
+}
+
+.menu-link {
+  padding: 8px 16px;
+}
+
+.menu__list-item:not(:first-child) {
+  margin-top: 4px;
+}
+
+.menu-link.menu__link--active {
+  color: var(--color-white);
+  background: var(--primary-1);
+}

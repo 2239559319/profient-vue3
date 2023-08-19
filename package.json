@@ -1,7 +1,8 @@
 {
-  "name": "doc-theme-test",
+  "name": "profient-vue3",
   "version": "0.0.0",
   "private": true,
+  "packageManager": "pnpm@8.6.3",
   "lint-staged": {
     "*": "pnpm format"
   },
@@ -23,6 +24,7 @@
   "dependencies": {
     "@docusaurus/core": "2.4.1",
     "@docusaurus/preset-classic": "2.4.1",
+    "@docusaurus/theme-common": "^2.4.1",
     "@mdx-js/react": "^1.6.22",
     "clsx": "^1.2.1",
     "docusaurus-plugin-image-zoom": "^1.0.1",
@@ -31,10 +33,14 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@docsearch/react": "^3.5.1",
     "@docusaurus/module-type-aliases": "2.4.1",
+    "@docusaurus/theme-search-algolia": "^2.4.1",
     "@docusaurus/types": "^2.4.1",
     "@tsconfig/docusaurus": "^1.0.5",
     "husky": "^8.0.3",
+    "less": "^4.2.0",
+    "less-loader": "^11.1.3",
     "lint-staged": "^13.2.3",
     "prettier": "^3.0.1",
     "serve": "^14.2.0",

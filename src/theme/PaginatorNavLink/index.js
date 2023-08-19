@@ -1,0 +1,25 @@
+import React from 'react';
+import clsx from 'clsx';
+import Link from '@docusaurus/Link';
+import { ArrowLeft } from './arrow-left';
+import { ArrowRight } from './arrow-right';
+
+export default function PaginatorNavLink(props) {
+  const { permalink, title, subLabel, isNext, next } = props;
+  return (
+    <Link
+      className={clsx(
+        'pagination-nav__link',
+        isNext ? 'pagination-nav__link--next' : 'pagination-nav__link--prev',
+      )}
+      to={permalink}
+    >
+      {subLabel && <div className="pagination-nav__sublabel">{subLabel}</div>}
+      <div className="pagination-nav-c">
+        {!next ? <ArrowLeft /> : null}
+        <div className="pagination-nav__label">{title}</div>
+        {next ? <ArrowRight /> : null}
+      </div>
+    </Link>
+  );
+}
