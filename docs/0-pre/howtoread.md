@@ -1,17 +1,4 @@
----
-title: 读懂本文档
-description: 读懂本文档
-slug: 读懂本文档
-authors:
-  - name: xiaochuan
-    title: author
-    url: https://github.com/2239559319
-    image_url: https://avatars.githubusercontent.com/u/34960995?v=4
-image: https://i.imgur.com/mErPwqL.png
-hide_table_of_contents: false
----
-
-# 如何读懂本文档
+# 读懂本文档
 
 理解源码并不是只是看别人的理解，对于一个点可能不同的人理解不一样。深入源码需要不断的调试。本文档里面使用的调试方法主要是两个。
 

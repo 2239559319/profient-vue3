@@ -1,5 +1,10 @@
 # Table of contents
 
+## 前言
+
+- [背景](0-pre/back.md)
+- [读懂本文档](0-pre/howtoread.md)
+
 ## 1 准备工作
 
 - [1.1 环境准备](1-zhun-bei-gong-zuo/README.md)

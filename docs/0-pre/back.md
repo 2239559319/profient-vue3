@@ -1,16 +1,3 @@
----
-title: 写在前面
-description: back
-slug: 写在前面
-authors:
-  - name: xiaochuan
-    title: author
-    url: https://github.com/2239559319
-    image_url: https://avatars.githubusercontent.com/u/34960995?v=4
-image: https://i.imgur.com/mErPwqL.png
-hide_table_of_contents: false
----
-
 # 写在前面
 
 其实我很早之前就想写一篇关于`vue3`的源码分析，鉴于之前上班很忙，加上上班使用的技术栈是`react`，`vue3`的源码只看过很少的一部分，主要的经历还是放在了`react`和相关的技术上。
