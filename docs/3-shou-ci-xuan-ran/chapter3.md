@@ -14,6 +14,7 @@ id: readme
 
 在我们的代码里面都有如下的代码
 
+{% code lineNumbers="true" %}
 ```js
 import { createApp } from 'vue';
 import './style.css';
@@ -21,9 +22,11 @@ import App from './App.vue';
 
 createApp(App).mount('#app');
 ```
+{% endcode %}
 
 `createApp`函数返回的就是[app](../2-yuan-ma-gai-shu/datastructure.md#app)对象。`mount`函数实际上是有返回值的为了区分将上图中的`craeteApp`和`mount`分开得到
 
+{% code lineNumbers="true" %}
 ```js
 import { createApp } from 'vue';
 import './style.css';
@@ -33,3 +36,4 @@ const app = createApp(App);
 
 app.mount('#app');
 ```
+{% endcode %}
