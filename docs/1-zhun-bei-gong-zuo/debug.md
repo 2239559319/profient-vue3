@@ -31,7 +31,7 @@ pnpm build -s
 
 ![带有sourcemap的打包](../chapters/chapter1/imgs/build.png)
 
-这里为了方便使用已经上传了[cdn](https://www.jsdelivr.com/package/npm/xiaochuan-vue3-source?tab=files\&path=dist%2F3.3.4)
+这里为了方便使用已经上传了[cdn](https://www.jsdelivr.com/package/npm/xiaochuan-vue3-source?tab=files&path=dist%2F3.3.4)
 
 ## 引入
 
