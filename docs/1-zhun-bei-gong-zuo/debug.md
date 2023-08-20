@@ -3,7 +3,7 @@ title: 1.2 调试
 sidebar_position: 1.2
 ---
 
-# 调试
+# 1.2 调试
 
 ## 调试准备
 
@@ -29,9 +29,9 @@ pnpm build -s
 
 打包出的代码位于`packages/vue/dist`文件夹下，带有`sourcemap`文件
 
-![带有sourcemap的打包](./imgs/build.png)
+![带有sourcemap的打包](../chapters/chapter1/imgs/build.png)
 
-这里为了方便使用已经上传了[cdn](https://www.jsdelivr.com/package/npm/xiaochuan-vue3-source?tab=files&path=dist%2F3.3.4)
+这里为了方便使用已经上传了[cdn](https://www.jsdelivr.com/package/npm/xiaochuan-vue3-source?tab=files\&path=dist%2F3.3.4)
 
 ## 引入
 
@@ -47,7 +47,7 @@ pnpm build -s
 
 使用`@vue/cli`创建的项目可以直接修改`webpack`的配置
 
-```js title="vue.config.js"
+```js
 /**
  * @type {import('@vue/cli-service').ProjectOptions}
  */
@@ -63,7 +63,7 @@ const config = {
 module.exports = config;
 ```
 
-```diff title="public/index.html"
+```diff
 <!DOCTYPE html>
 <html lang="">
   <head>
@@ -93,9 +93,9 @@ pnpm start
 
 在浏览器里面我们把断点打到`main.js`的`createApp`那行，断点生效后点击`step into`(图1左下角)跳进函数声明，可以看到图2以及正确跳进了`vue3`的源码的`createApp`函数声明里面
 
-![图1](./imgs/debug1.png)
+![图1](../chapters/chapter1/imgs/debug1.png)
 
-![图2](./imgs/debug2.png)
+![图2](../chapters/chapter1/imgs/debug2.png)
 
 webpack external方式的源码位于[examples/demo-webpack](https://github.com/2239559319/profient-vue3/tree/master/examples/demo-webpack)
 
@@ -105,7 +105,7 @@ webpack external方式的源码位于[examples/demo-webpack](https://github.com/
 
 `esm`模块的`vue`文件位于[https://cdn.jsdelivr.net/npm/xiaochuan-vue3-source@0.0.5/dist/3.3.4/vue.esm-browser.prod.js](https://cdn.jsdelivr.net/npm/xiaochuan-vue3-source@0.0.5/dist/3.3.4/vue.esm-browser.prod.js)
 
-```diff title="vite.config.js"
+```diff
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 // https://vitejs.dev/config/
@@ -120,7 +120,7 @@ export default defineConfig({
 });
 ```
 
-```diff title="index.html"
+```diff
 <!doctype html>
 <html lang="en">
   <head>
@@ -152,8 +152,7 @@ pnpm start
 
 断点的步骤和`webpack`方式`externals`一样
 
-![图3](./imgs/debug3.png)
-![图4](./imgs/debug4.png)
+![图3](../chapters/chapter1/imgs/debug3.png) ![图4](../chapters/chapter1/imgs/debug4.png)
 
 可以看到表现和`webpack`方式引入的`vue`一样
 

@@ -3,13 +3,13 @@ title: 2.3 运行概述
 sidebar_position: 2.3
 ---
 
-# 运行概述
+# 2.3 运行概述
 
 ## 首次渲染
 
 火焰图
 
-![record1](./imgs/r1.png)
+![record1](../chapters/chapter2/imgs/r1.png)
 
 从图中可以看出第一次渲染主要分为两步
 
@@ -22,9 +22,9 @@ sidebar_position: 2.3
 
 ## 非首次渲染
 
-![](./imgs/render2-1.png)
+![](../chapters/chapter2/imgs/render2-1.png)
 
-![](./imgs/render2-2.png)
+![](../chapters/chapter2/imgs/render2-2.png)
 
 > 图1左边部分位于图2的红色框区域
 

@@ -3,7 +3,7 @@ title: 2.2 基本数据结构
 sidebar_position: 2.2
 ---
 
-# 基本数据结构
+# 2.2 基本数据结构
 
 基本数据结构是在运行中常用的数据结构。
 
@@ -11,11 +11,11 @@ sidebar_position: 2.2
 
 常说的组件是`import HelloWorld from './helloworld.vue'`中的`HelloWorld`。在使用`webpack`和`vue-loader`时，这里导入的组件会被`vue-loader`自动处理。对于`Options API`的组件来讲，这里以demo中的`App.vue`来讲，具有以下结构
 
-![](./imgs/options-component.png)
+![](../chapters/chapter2/imgs/options-component.png)
 
 对于`composite setup`的组件来讲，具有一下结构
 
-![](./imgs/composite-componet.png)
+![](../chapters/chapter2/imgs/composite-componet.png)
 
 总结起来就是`component`是经过编译器处理后得到的产物。具有一定结构
 
@@ -25,7 +25,7 @@ sidebar_position: 2.2
 
 app具有以下结构
 
-![](./imgs/app.png)
+![](../chapters/chapter2/imgs/app.png)
 
 ## component instance
 
@@ -33,13 +33,13 @@ app具有以下结构
 
 `component instance`具有以下结构
 
-![](./imgs/component-instance.png)
+![](../chapters/chapter2/imgs/component-instance.png)
 
 ## vnode
 
 这个不多讲官网文档里面有。`vnode`是渲染算法的核心结构。`type=component`的`vnode`具有以下结构
 
-![](./imgs/vnode.png)
+![](../chapters/chapter2/imgs/vnode.png)
 
 > vnode还有其他很多种结构这里不列出
 
@@ -51,6 +51,6 @@ app具有以下结构
 
 对于`type=component`的`vnode`来讲，以上数据结构具有如下的关系
 
-![数据结构依赖图](./imgs/dara-graph.png)
+![数据结构依赖图](../chapters/chapter2/imgs/dara-graph.png)
 
 > 图中的`container`相关依赖仅为根组件具有，其他`component`不具有
